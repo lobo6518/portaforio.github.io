@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gustavo Siguas Ricra | Portafolio y AutoMax</title>
+
+<style>
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #05000e;
+    color: white;
+}
+
+/* =====================================================
+   MENÚ
+===================================================== */
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+    padding: 10px;
+
+    background: #000;
+    border-bottom: 2px solid #8b00ff;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1a1a2e;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: linear-gradient(
+        90deg,
+        #6200ff,
+        #d000ff
+    );
+
+    box-shadow: 0 0 15px #8000ff;
+}
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.view-section {
+    display: none;
+}
+
+.view-section.active {
+    display: block;
+}
+
+/* =====================================================
+   PORTAFOLIO
+===================================================== */
+
+.portfolio-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* ENCABEZADO */
+
+.header-portafolio {
+    text-align: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #1e1b4b,
+        #312e81
+    );
+
+    border-radius: 16px;
+
+    margin-bottom: 40px;
+}
+
+.header-portafolio h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header-portafolio p {
+    font-size: 17px;
+    color: #dbeafe;
+}
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+.section-title {
+    text-align: center;
+
+    font-size: 1.8rem;
+
+    margin: 35px 0;
+
+    color: #38bdf8;
+
+    text-transform: uppercase;
+}
+
+/* =====================================================
+   FOTO DE PERFIL
+===================================================== */
+
+.foto-principal {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto 50px;
+
+    padding: 10px;
+
+    background: #1e293b;
+
+    border: 2px solid #8b5cf6;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 30px rgba(139, 92, 246, 0.4);
+
+    overflow: hidden;
+}
+
+.foto-principal img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    border-radius: 10px;
+}
+
+/* =====================================================
+   5 CUADROS INFORMATIVOS
+===================================================== */
+
+.grid-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 50px;
+}
+
+.card-info {
+    background: #1e293b;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    border-left: 5px solid #818cf8;
+
+    transition: 0.3s;
+}
+
+.card-info:hover {
+    transform: translateY(-5px);
+
+    border-left-color: #38bdf8;
+
+    box-shadow:
+        0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+.card-info h3 {
+    color: #38bdf8;
+
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    color: #e2e8f0;
+
+    line-height: 1.6;
+}
+
+/* =====================================================
+   BOTÓN AUTOMAX
+===================================================== */
+
+.card-link {
+    background: linear-gradient(
+        135deg,
+        #0284c7,
+        #4f46e5
+    );
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.card-link h2 {
+    margin-bottom: 10px;
+}
+
+.card-link p {
+    color: #e0f2fe;
+}
+
+.btn-ir {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 14px 30px;
+
+    background: white;
+
+    color: #4f46e5;
+
+    font-weight: bold;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-ir:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.5);
+}
+
+/* =====================================================
+   AUTOMAX
+===================================================== */
+
+.automax-header {
+    text-align: center;
+
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #05000e,
+        #26004d,
+        #001d52
+    );
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #c800ff;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.7)
+        ),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e2e8f0;
+}
+
+/* =====================================================
+   CATÁLOGO
+===================================================== */
+
+.autos-section,
+.ofertas-section {
+    padding: 50px 20px;
+}
+
+.autos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+/* =====================================================
+   TARJETAS DE AUTOS
+===================================================== */
+
+.auto-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+    color: #111;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.auto-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.4);
+}
+
+.auto-card img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.auto-info {
+    padding: 15px;
+}
+
+.auto-info h3 {
+    margin-bottom: 8px;
+}
+
+.precio {
+    color: #e32635;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.precio-anterior {
+    color: #777;
+
+    font-size: 14px;
+
+    text-decoration: line-through;
+}
+
+/* =====================================================
+   OFERTA
+===================================================== */
+
+.badge {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 5;
+
+    background: red;
+
+    color: white;
+
+    padding: 5px 10px;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+}
+
+/* =====================================================
+   BOTÓN AUTO
+===================================================== */
+
+.auto-btn {
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #6200ff;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.auto-btn:hover {
+    background: #8b00ff;
+
+    box-shadow:
+        0 0 15px rgba(98,0,255,0.5);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    background: #030014;
+
+    border-top: 1px solid #333;
+
+    color: #cbd5e1;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .header-portafolio h1 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .tab-btn {
+        width: 100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     MENÚ PRINCIPAL
+===================================================== -->
+
+<nav class="main-nav">
+
+    <button
+        class="tab-btn active"
+        onclick="mostrarSeccion('portafolio')">
+
+        👤 Portafolio Proceso
+
+    </button>
+
+    <button
+        class="tab-btn"
+        onclick="mostrarSeccion('automax')">
+
+        🚘 Ver Sitio Web AutoMax
+
+    </button>
+
+</nav>
+
+
+<!-- =====================================================
+     PORTAFOLIO
+===================================================== -->
+
+<section
+    id="portafolio"
+    class="view-section active">
+
+    <div class="portfolio-container">
+
+
+        <!-- ENCABEZADO -->
+
+        <div class="header-portafolio">
+
+            <h1>
+                Gustavo Siguas Ricra
+            </h1>
+
+            <p>
+                Portafolio de Desarrollo Web &
+                Documentación de Proyecto
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FOTO
+        ================================================== -->
+
+        <h2 class="section-title">
+            📸 Fotografía de Perfil
+        </h2>
+
+
+        <div class="foto-principal">
+
+            <!--
+                IMPORTANTE:
+                La imagen debe llamarse exactamente:
+
+                image-1024.jpg
+
+                y estar en la misma carpeta que index.html.
+            -->
+
+            <img
+                src="./image-1024.jpg"
+                alt="Fotografía de perfil">
+
+        </div>
+
+
+        <!-- =================================================
+             INFORMACIÓN
+        ================================================== -->
+
+        <h2 class="section-title">
+            5 Cuadros Informativos del Sitio Web
+        </h2>
+
+
+        <div class="grid-info">
+
+
+            <div class="card-info">
+
+                <h3>
+                    📌 1. Estructura
+                </h3>
+
+                <p>
+                    Diseño y organización del catálogo
+                    dividido en 10 autos principales
+                    y 10 autos en oferta.
+                </p>
+
+            </div>
+
+
+            <div class="card-info">
+
+                <h3>
+                    🎨 2. Interfaz UX/UI
+                </h3>
+
+                <p>
+                    Maquetación moderna en Dark Mode
+                    con efectos dinámicos mediante CSS3.
+                </p>
+
+            </div>
+
+
+            <div class="card-info">
+
+                <h3>
+                    ⚙️ 3. Lógica JavaScript
+                </h3>
+
+                <p>
+                    Programación de navegación entre
+                    secciones y elementos interactivos
+                    utilizando JavaScript.
+                </p>
+
+            </div>
+
+
+            <div class="card-info">
+
+                <h3>
+                    🛠️ 4. Corrección de Imágenes
+                </h3>
+
+                <p>
+                    Integración de imágenes y recursos
+                    externos para mejorar la presentación
+                    visual del sitio web.
+                </p>
+
+            </div>
+
+
+            <div class="card-info">
+
+                <h3>
+                    📱 5. Conexión Directa
+                </h3>
+
+                <p>
+                    Integración de botones y elementos
+                    preparados para facilitar el contacto
+                    con los clientes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BOTÓN AUTOMAX
+        ================================================== -->
+
+        <div class="card-link">
+
+            <h2>
+                🚘 ¿Deseas probar el sitio web directamente?
+            </h2>
+
+            <p>
+                Haz clic en el siguiente botón para
+                cambiar a la vista de la tienda de autos.
+            </p>
+
+            <div
+                class="btn-ir"
+                onclick="mostrarSeccion('automax')">
+
+                ABRIR PÁGINA AUTOMAX
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AUTOMAX
+===================================================== -->
+
+<section
+    id="automax"
+    class="view-section">
+
+
+    <header class="automax-header">
+
+        <div class="logo">
+            AUTO<span>MAX</span>
+        </div>
+
+        <p>
+            Tu tienda de autos de confianza
+        </p>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <h1>
+            CATÁLOGO AUTOMOTRIZ 2026
+        </h1>
+
+        <p>
+            Explora 20 modelos disponibles
+            con entregas inmediatas
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         10 AUTOS PRINCIPALES
+    ================================================== -->
+
+    <div class="autos-section">
+
+        <h2
+            style="
+            text-align:center;
+            margin-bottom:25px;
+            ">
+
+            🚗 Catálogo Principal (10 Autos)
+
+        </h2>
+
+
+        <div class="autos-grid">
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=500"
+                    alt="Toyota Corolla">
+
+                <div class="auto-info">
+
+                    <h3>Toyota Corolla</h3>
+
+                    <div class="precio">
+                        $24,990
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500"
+                    alt="BMW Serie 3">
+
+                <div class="auto-info">
+
+                    <h3>BMW Serie 3</h3>
+
+                    <div class="precio">
+                        $42,500
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=500"
+                    alt="Ford Mustang GT">
+
+                <div class="auto-info">
+
+                    <h3>Ford Mustang GT</h3>
+
+                    <div class="precio">
+                        $55,900
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500"
+                    alt="Mercedes Clase C">
+
+                <div class="auto-info">
+
+                    <h3>Mercedes Clase C</h3>
+
+                    <div class="precio">
+                        $48,900
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=500"
+                    alt="Audi Q8">
+
+                <div class="auto-info">
+
+                    <h3>Audi Q8</h3>
+
+                    <div class="precio">
+                        $68,500
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500"
+                    alt="Honda CR-V">
+
+                <div class="auto-info">
+
+                    <h3>Honda CR-V</h3>
+
+                    <div class="precio">
+                        $31,900
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1581540222194-0def2dda9f08?w=500"
+                    alt="Toyota RAV4">
+
+                <div class="auto-info">
+
+                    <h3>Toyota RAV4</h3>
+
+                    <div class="precio">
+                        $34,900
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=500"
+                    alt="BMW X5">
+
+                <div class="auto-info">
+
+                    <h3>BMW X5</h3>
+
+                    <div class="precio">
+                        $72,900
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500"
+                    alt="Ford F-150">
+
+                <div class="auto-info">
+
+                    <h3>Ford F-150</h3>
+
+                    <div class="precio">
+                        $78,200
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=500"
+                    alt="Nissan GT-R">
+
+                <div class="auto-info">
+
+                    <h3>Nissan GT-R</h3>
+
+                    <div class="precio">
+                        $121,000
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Detalles
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         10 OFERTAS
+    ================================================== -->
+
+    <div
+        class="ofertas-section"
+        style="background:#130021;">
+
+        <h2
+            style="
+            text-align:center;
+            color:red;
+            margin-bottom:25px;
+            ">
+
+            🔥 10 Ofertas Especiales
+
+        </h2>
+
+
+        <div class="autos-grid">
+
+
+            <div class="auto-card">
+
+                <div class="badge">-15%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=500"
+                    alt="Tesla Model 3">
+
+                <div class="auto-info">
+
+                    <h3>Tesla Model 3</h3>
+
+                    <div class="precio">
+                        $38,990
+                        <span class="precio-anterior">
+                            $45,000
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-20%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500"
+                    alt="Toyota Camry">
+
+                <div class="auto-info">
+
+                    <h3>Toyota Camry</h3>
+
+                    <div class="precio">
+                        $27,900
+                        <span class="precio-anterior">
+                            $34,800
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-10%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1541348263662-e082662d82da?w=500"
+                    alt="Audi A4">
+
+                <div class="auto-info">
+
+                    <h3>Audi A4</h3>
+
+                    <div class="precio">
+                        $39,500
+                        <span class="precio-anterior">
+                            $44,000
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-25%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500"
+                    alt="Corvette Stingray">
+
+                <div class="auto-info">
+
+                    <h3>Corvette Stingray</h3>
+
+                    <div class="precio">
+                        $64,000
+                        <span class="precio-anterior">
+                            $85,000
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-12%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=500"
+                    alt="Hyundai Tucson">
+
+                <div class="auto-info">
+
+                    <h3>Hyundai Tucson</h3>
+
+                    <div class="precio">
+                        $26,400
+                        <span class="precio-anterior">
+                            $30,000
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-18%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=500"
+                    alt="Kia Sportage">
+
+                <div class="auto-info">
+
+                    <h3>Kia Sportage</h3>
+
+                    <div class="precio">
+                        $25,200
+                        <span class="precio-anterior">
+                            $30,800
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-14%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500"
+                    alt="BMW Serie 4">
+
+                <div class="auto-info">
+
+                    <h3>BMW Serie 4</h3>
+
+                    <div class="precio">
+                        $46,800
+                        <span class="precio-anterior">
+                            $54,500
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-30%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500"
+                    alt="Porsche 911">
+
+                <div class="auto-info">
+
+                    <h3>Porsche 911</h3>
+
+                    <div class="precio">
+                        $108,000
+                        <span class="precio-anterior">
+                            $154,000
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-10%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=500"
+                    alt="Lamborghini Huracán">
+
+                <div class="auto-info">
+
+                    <h3>Lamborghini Huracán</h3>
+
+                    <div class="precio">
+                        $210,000
+                        <span class="precio-anterior">
+                            $235,000
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="auto-card">
+
+                <div class="badge">-15%</div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=500"
+                    alt="Jeep Wrangler">
+
+                <div class="auto-info">
+
+                    <h3>Jeep Wrangler</h3>
+
+                    <div class="precio">
+                        $44,200
+                        <span class="precio-anterior">
+                            $52,000
+                        </span>
+                    </div>
+
+                    <button class="auto-btn">
+                        Ver Oferta
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        Desarrollado por:
+        <strong>
+            Gustavo Siguas Ricra
+        </strong>
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function mostrarSeccion(id) {
+
+    /* Ocultar las secciones */
+
+    document
+        .querySelectorAll('.view-section')
+        .forEach(function(seccion) {
+
+            seccion.classList.remove('active');
+
+        });
+
+
+    /* Quitar activo de los botones */
+
+    document
+        .querySelectorAll('.tab-btn')
+        .forEach(function(boton) {
+
+            boton.classList.remove('active');
+
+        });
+
+
+    /* Mostrar la sección seleccionada */
+
+    document
+        .getElementById(id)
+        .classList.add('active');
+
+
+    /* Activar botón */
+
+    if (id === 'portafolio') {
+
+        document
+            .querySelectorAll('.tab-btn')[0]
+            .classList.add('active');
+
+    } else {
+
+        document
+            .querySelectorAll('.tab-btn')[1]
+            .classList.add('active');
+
+    }
+
+
+    /* Volver arriba */
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+}
+
+</script>
+
+</body>
+</html>
